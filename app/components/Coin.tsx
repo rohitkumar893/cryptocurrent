@@ -37,7 +37,7 @@ export default function Coin() {
   }, []);
 
   return (
-    <div className="h-full w-[80%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+    <div className="h-full w-[80%] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 place-items-center">
       {coins.map((coin, i) => (
         <div
           key={i}
