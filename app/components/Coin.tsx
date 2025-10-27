@@ -24,10 +24,10 @@ export default function Coin() {
         // Fetch all tickers
         const res = await axios.get("https://api.coinpaprika.com/v1/tickers");
         // Sort by market cap rank & take top 9
-        const top9 = res.data
+        const top18 = res.data
           .sort((a: any, b: any) => a.rank - b.rank)
-          .slice(0, 15);
-        setCoins(top9);
+          .slice(0, 18);
+        setCoins(top18);
       } catch (err) {
         console.error("Error fetching coins:", err);
       }
@@ -41,7 +41,7 @@ export default function Coin() {
       {coins.map((coin, i) => (
         <div
           key={i}
-          className="flex flex-col gap-6 items-center justify-center hover:bg-gray-800 border-2 border-gray-500 bg-gray-600 rounded-2xl min-w-52 h-[350px] shadow-xl w-[300px]"
+          className="flex flex-col gap-6 items-center justify-center hover:bg-gray-600  border-gray-500 bg-gray-700 rounded-2xl min-w-52 h-[350px] shadow-xl w-[300px]"
         >
           <Image
             src={`https://static.coinpaprika.com/coin/${coin.id}/logo.png`}
@@ -49,7 +49,7 @@ export default function Coin() {
             width={80}
             height={80}
           />
-          <h1 className="font-semibold text-3xl text-red-400 text-center">{coin.name}</h1>
+          <h1 className="font-semibold text-3xl text-blue-400 text-center">{coin.name}</h1>
           <h1 className="font-semibold text-2xl text-gray-100">
             ${coin.quotes.USD.price.toFixed(2)}
           </h1>
