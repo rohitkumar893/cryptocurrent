@@ -28,7 +28,7 @@ export default function Coin() {
         // Sort by market cap rank & take top 9
         const top24 = res.data
           .sort((a: any, b: any) => a.rank - b.rank)
-          .slice(0, 24);
+          .slice(0, 30);
         setCoins(top24);
         setLoading(false)
       } catch (err) {
@@ -41,7 +41,7 @@ export default function Coin() {
 
   if(loading){
     return(
-      <div className="flex justify-center items-center h-screen w-screen bg-[#0a0a0a] top-0 left-0 fixed">
+      <div className="flex justify-center items-center h-screen w-screen bg-[#1b1b1b] top-0 left-0 fixed">
         <Loading />
       </div>
     )
