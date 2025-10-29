@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Coin from './components/Coin'
 import Search from "./components/Search";
 import Footer from "./components/Footer";

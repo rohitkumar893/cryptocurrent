@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import Loading from "@/app/components/Loading"
 
 interface Coin {
   id: string;
@@ -17,6 +18,7 @@ interface Coin {
 
 export default function Coin() {
   const [coins, setCoins] = useState<Coin[]>([]);
+  const [loading,setLoading] = useState(true)
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -28,6 +30,7 @@ export default function Coin() {
           .sort((a: any, b: any) => a.rank - b.rank)
           .slice(0, 24);
         setCoins(top24);
+        setLoading(false)
       } catch (err) {
         console.error("Error fetching coins:", err);
       }
@@ -35,6 +38,14 @@ export default function Coin() {
 
     fetchCoins();
   }, []);
+
+  if(loading){
+    return(
+      <div className="flex justify-center items-center h-screen w-screen bg-[#0a0a0a] top-0 left-0 fixed">
+        <Loading />
+      </div>
+    )
+  }
 
   return (
     <div className="h-full w-[74%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
