@@ -7,7 +7,7 @@ export default function Loading() {
     <div className="flex justify-center items-center h-screen w-screen">
       <div className="h-80">
         <DotLottieReact
-            src="https://lottie.host/59b5388d-8550-4c73-a114-d2ad99b6715c/6shhQu4ZUF.lottie"
+            src="/loading.lottie"
             loop
             autoplay
         />

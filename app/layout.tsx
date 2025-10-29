@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <Head>
+        <link
+          rel="preload"
+          href="https://lottie.host/59b5388d-8550-4c73-a114-d2ad99b6715c/6shhQu4ZUF.lottie"
+          as="fetch"
+          crossOrigin="anonymous"
+        />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
