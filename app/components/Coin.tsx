@@ -28,7 +28,7 @@ export default function Coin() {
         // Sort by market cap rank & take top 9
         const top24 = res.data
           .sort((a: any, b: any) => a.rank - b.rank)
-          .slice(0, 30);
+          .slice(0, 33);
         setCoins(top24);
         setLoading(false)
       } catch (err) {
