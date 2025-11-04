@@ -60,7 +60,7 @@ export default function Coin() {
             width={80}
             height={80}
           />
-          <h1 className="font-semibold text-3xl text-blue-400 text-center">{coin.name}</h1>
+          <h1 className="font-semibold text-3xl text-blue-400 text-center px-2">{coin.name}</h1>
           <h1 className="font-semibold text-2xl text-gray-100">
             ${coin.quotes.USD.price.toFixed(2)}
           </h1>
