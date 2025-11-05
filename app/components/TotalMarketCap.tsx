@@ -17,9 +17,9 @@ export default function MarketCap(){
     },[])
 
     return(
-        <div className="flex flex-col items-center justify-center mb-12">
+        <div className="flex flex-col col-span-full items-center justify-center mb-8">
             <h1 className="text-2xl font-semibold text-gray-200 mb-1">Total Market Cap:</h1>
-            <h1 className="text-3xl font-semibold text-yellow-200">${state}</h1>
+            <h1 className="text-3xl animate-pulse font-semibold text-yellow-200">${state}</h1>
         </div>
     )
 }
