@@ -53,52 +53,52 @@ export default function Coin() {
     return <></>
   }
 
-  if (search !== "")
-  coins.filter(v => v.name.includes(search))
+  // if (search !== "")
+  // coins.filter(v => v.name.includes(search))
 
-   if (search.trim() !== "") {
-    const filteredCoins = coins.filter((coin) =>
-      coin.name.toLowerCase().includes(search.toLowerCase())
-    );
+  //  if (search.trim() !== "") {
+  //   const filteredCoins = coins.filter((coin) =>
+  //     coin.name.toLowerCase().includes(search.toLowerCase())
+  //   );
 
-    return (
-      <div className="h-full w-[74%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
-        <div className="col-span-full">
-          <input
-            className="w-78 md:w-90 h-12 border px-4 bg-[#252525] border-gray-200 my-12 rounded-xl text-white"
-            placeholder="Search coin..."
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
+  //   return (
+  //     <div className="h-full w-[74%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+  //       <div className="col-span-full">
+  //         <input
+  //           className="w-78 md:w-90 h-12 border px-4 bg-[#252525] border-gray-200 my-12 rounded-xl text-white"
+  //           placeholder="Search coin..."
+  //           onChange={(e) => setSearch(e.target.value)}
+  //         />
+  //       </div>
 
-        <MarketCap />
+  //       <MarketCap />
 
-        {filteredCoins.length > 0 ? (
-          filteredCoins.map((coin, i) => (
-            <div
-              key={i}
-              className="flex flex-col gap-5 items-center justify-center hover:bg-gray-600 border-gray-500 bg-gray-700 rounded-2xl min-w-52 h-[320px] shadow-xl w-[280px]"
-            >
-              <Image
-                src={`https://static.coinpaprika.com/coin/${coin.id}/logo.png`}
-                alt={coin.name}
-                width={80}
-                height={80}
-              />
-              <h1 className="font-semibold text-3xl text-blue-400 text-center px-2">
-                {coin.name}
-              </h1>
-              <h1 className="font-semibold text-2xl text-gray-100">
-                ${coin.quotes.USD.price.toFixed(2)}
-              </h1>
-            </div>
-          ))
-        ) : (
-          <p className="text-white text-xl col-span-full">No results found.</p>
-        )}
-      </div>
-    );
-  }
+  //       {filteredCoins.length > 0 ? (
+  //         filteredCoins.map((coin, i) => (
+  //           <div
+  //             key={i}
+  //             className="flex flex-col gap-5 items-center justify-center hover:bg-gray-600 border-gray-500 bg-gray-700 rounded-2xl min-w-52 h-[320px] shadow-xl w-[280px]"
+  //           >
+  //             <Image
+  //               src={`https://static.coinpaprika.com/coin/${coin.id}/logo.png`}
+  //               alt={coin.name}
+  //               width={80}
+  //               height={80}
+  //             />
+  //             <h1 className="font-semibold text-3xl text-blue-400 text-center px-2">
+  //               {coin.name}
+  //             </h1>
+  //             <h1 className="font-semibold text-2xl text-gray-100">
+  //               ${coin.quotes.USD.price.toFixed(2)}
+  //             </h1>
+  //           </div>
+  //         ))
+  //       ) : (
+  //         <p className="text-white text-xl col-span-full">No results found.</p>
+  //       )}
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="h-full w-[74%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
